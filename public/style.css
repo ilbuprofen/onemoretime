@@ -66,3 +66,76 @@ button
     box-shadow: 0 0.15rem 0 white, 0 0.1rem 0.35rem var(--light-pink);
     padding: 0.7rem 0.9rem;
 }
+
+.panel-title
+{
+    margin:0.1;
+    text-align: center;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+.panel-title.small
+{
+    font-size: 0.8rem;
+    font-style: normal;
+    letter-spacing: 0.1rem;
+}
+
+/* LAYOUTS! */
+.player
+{
+    display: grid;
+    grid-template-columns: minmax(0, 30fr) minmax(0, 70fr);
+    gap: 0.8rem;
+    height: 100%;
+    padding: 0.8rem;
+}
+
+.left-panel
+{
+    display: grid;
+    grid-template-rows: 1.55fr 1fr;
+    gap: 0.8rem;
+    min-height: 0;
+    min-width: 0;
+}
+
+.right-panel
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.8rem;
+    min-height: 0;
+    min-width: 0;
+}
+
+/* visualisuh */
+.visualiser
+{
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    min-height: 0;
+    min-width: 0;
+}
+
+.visualiser video
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* sample catalogue */
+.catalogue
+{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.8rem;
+}
+
+/* dials + faders */
