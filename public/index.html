@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>One More Time</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="start" class="start">
+            <div class="start-box panel">
+                <h1>One More Time</h1>
+                <p>An interactive music sampling installation where visitors remix and revitalise public-domain archive audio and self-composed sonic material, preserving dated and often "forgotten" music.</p>
+                <button id="start-btn" class="big-btn">Start</button>
+            </div>
+        </div>
+
+        <div>
+            <nav class="topnav" aria-label="main">
+                <a href="index.html" current="page">Home</a>
+                <a href="about.html">About the Team</a>
+            </nav>
+        </div>
+
+        <main class="player">
+            <!-- left -->
+             <div class="panel visualiser">
+                <section class="visualiser" label="Visualiser">
+                    <!-- cobin's videos go here -->
+                    <video id="visual-video" muted autoplay loop></video>
+                    <h2 id="visual-empty" class="panel-title">Visualiser</h2>
+                </section>
+
+                <section class="panel catalogue" aria-labelledby="cat-title">
+                    <h2 id="cat-title" class="panel-title small">SAMPLE CATALOGUE</h2>
+                    <ul id="catalogue" class="terminal" role="listbox" aria-label="Samples"></ul>
+                </section>
+            </div>
+
+            <section class="panel-visual">
+                <p class="label">Visual</p>
+                <div class="visual-frame">
+                    <video id="visual-video"></video>
+                    <p id="visual-empty" class="empty">No visual available.</p>
+                </div>
+            </section>
+
+            <section class="panel-wave">
+                <p class="label">Waveform</p>
+                <canvas id="waveform" label="Waveform of loaded sample"></canvas>
+                <div class="legend">
+                    <span><i class="swatch played"></i>Played</span>
+                    <span><i class="swatch idle">Still to Play</span>
+                </div>
+            </section>
+
+            <section class="panel-dialbox">
+                <p class="label">Controls</p>
+                <div id="dial" class="dial" role="slider">
+
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
