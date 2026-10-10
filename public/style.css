@@ -1,0 +1,68 @@
+:root
+{
+    --light-pink: #ffc4ff;
+    --medium-pink: #ff1fff;
+    --pink-edge: #d62bd6;
+    --pink-deep: #7a087a;
+    --ink: #16001c;
+    --font: "OMT Pixel", "Silkscreen", "Press Start 2P", ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+}
+
+.topnav
+{
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.8rem 0.8rem 0;
+}
+
+.topnav a
+{
+    display: inline-flex;
+    align-items: center;
+    min-height: 2rem;
+    padding: 0 1.2 rem;
+    border: 0.14rem solid var(--pink-deep);
+    border-radius: 0.7rem;
+    color: var(--ink);
+    background: linear-gradient(var(--light-pink), var(--medium-pink));
+    font-size: 0.9rem;
+}
+
+.topnav a:hover
+{
+    background: linear-gradient(#ff6dff, #ffeaff);
+}
+
+.topnav a[current="page"]
+{
+    background: linear-gradient(#ff6dff, #ffeaff);
+    box-shadow: inset 0 0.2rem 0.35rem lightgray;
+}
+
+body
+{
+    margin: 0.8rem;
+    background: white;
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1rem;
+    line-height: 1.25;
+    height: 100%;
+    overflow: hidden;
+}
+
+button 
+{
+    font: inherit;
+    color: inherit;
+}
+
+/* panels */
+.panel
+{
+    background: linear-gradient(to bottom, var(--light-pink), var(--medium-pink));
+    border: 0.18rem solid var (--pink-edge);
+    border-radius: 1.1rem;
+    box-shadow: 0 0.15rem 0 white, 0 0.1rem 0.35rem var(--light-pink);
+    padding: 0.7rem 0.9rem;
+}
