@@ -37,29 +37,95 @@
                 </section>
             </div>
 
-            <section class="panel-visual">
-                <p class="label">Visual</p>
-                <div class="visual-frame">
-                    <video id="visual-video"></video>
-                    <p id="visual-empty" class="empty">No visual available.</p>
-                </div>
-            </section>
+            <!-- right -->
 
-            <section class="panel-wave">
-                <p class="label">Waveform</p>
-                <canvas id="waveform" label="Waveform of loaded sample"></canvas>
-                <div class="legend">
-                    <span><i class="swatch played"></i>Played</span>
-                    <span><i class="swatch idle">Still to Play</span>
-                </div>
-            </section>
+            <div class="right-panel">
+                <button id="nowplaying" class="panel nowplaying" type="button" haspopup="dialog">
+                    <span class="nowplaying-label">Now Playing</span>
+                    <span class="marquee">
+                        <span id="nowplaying-next" class="marquee-inner">Tap to begin</span>
+                    </span>
+                    <span class="nowplaying-info">Info</span>
+                </button>
 
-            <section class="panel-dialbox">
-                <p class="label">Controls</p>
-                <div id="dial" class="dial" role="slider">
+                <section class="panel dials" label="Dials and faders">
+                    <h2 class="panel-title">Dials</h2>
+                    <div class="dials-body">
+                        <div class="knobs">
+                            <div class="knob-wrap">
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="faders">
+                        <div class="fader-wrap">
+                            <div id="fader-archive" class="fader" role="slider" tabindex="0"orientation="vertical" label="Archive level" valuemax="100" valuenow="100">
+                                <div class="fader-track"></div>
+                                <div class="fader-thumb"></div>
+                                <span class="cap">Archive</span>
+                            </div>
+                        </div>
+                        <div class="fader-wrap">
+                            <div id="fader-archive" class="fader" role="slider" tabindex="0"orientation="vertical" label="Archive level" valuemax="100" valuenow="100">
+                                <div class="fader-track"></div>
+                                <div class="fader-thumb"></div>
+                                <span class="cap">Original</span>
+                            </div>
+                        </div>
+                        <div class="fader-wrap">
+                            <div id="fader-archive" class="fader" role="slider" tabindex="0"orientation="vertical" label="Archive level" valuemax="100" valuenow="100">
+                                <div class="fader-track"></div>
+                                <div class="fader-thumb"></div>
+                                <span class="cap">Master</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+<!-- samples -->
+                <div class="samples" role="group" label="Samples">
+                    <button id="sample-0" class="panel sample-btn" type="button" pressed="false">
+                        <svg class="star" viewBox="0 0 24 24" hidden="true">
+                            <path>
+                                <span>Sample 1</span>
+                            </path>
+                        </svg>
+                    </button>
+                    <button id="sample-1" class="panel sample-btn" type="button" pressed="false">
+                        <svg class="star" viewBox="0 0 24 24" hidden="true">
+                            <path>
+                                <span>Sample 2</span>
+                            </path>
+                        </svg>
+                    </button>
+                    <button id="sample-2" class="panel sample-btn" type="button" pressed="false">
+                        <svg class="star" viewBox="0 0 24 24" hidden="true">
+                            <path>
+                                <span>Sample 3</span>
+                            </path>
+                        </svg>
+                    </button>
                 </div>
-            </section>
+                <p id="status" class="status error" role="status" hidden></p>
+            </div>
         </main>
+<!-- source of samples -->
+        <dialog id="source-dialog" labelledby="source-title">
+            <h2 id="source-title" class="panel-title">Source of Sample</h2>
+            <div class="source-grid">
+                <section>
+                    <h3>Archive Side</h3>
+                    <dl id="source-archive"></dl>
+                </section>
+                <section>
+                    <h3>Original Side</h3>
+                    <dl id="source-original"></dl>
+                </section>
+            </div>
+            <form method="dialog">
+                <button class="big-btn" type="submit">Close</button>
+            </form>
+        </dialog>
+
+        <script type="module" src="app.js"></script>
     </body>
 </html>

@@ -5,6 +5,7 @@
     --pink-edge: #d62bd6;
     --pink-deep: #7a087a;
     --ink: #16001c;
+    --green: #39ff14;
     --font: "OMT Pixel", "Silkscreen", "Press Start 2P", ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 }
 
@@ -138,4 +139,66 @@ button
     padding-bottom: 0.8rem;
 }
 
+.terminal
+{
+    margin: 0.5rem 0 0;
+    padding: 0.35rem;
+    flex: 1;
+    overflow: auto;
+    background: var(--ink);
+    color: var(--green);
+    font-size: 0.85rem;
+    border: 0.15rem solid lightgray;
+    border-radius: 0.5rem;
+    scrollbar-color: var(--green) var(--ink);
+}
+
+/* now playing */
+.nowplaying
+{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.8rem;
+    font-size: 0.8rem;
+}
+
+.nowplaying:hover
+{
+    animation-play-state: paused;
+}
+
 /* dials + faders */
+.dials
+{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.6rem;
+}
+
+.dials-body
+{
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
+    margin-top: 0.3rem;
+}
+
+.knobs
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+}
+
+.faders
+{
+    display: flex;
+    justify-content: space-evenly;
+}
