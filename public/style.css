@@ -6,6 +6,7 @@
     --pink-deep: #7a087a;
     --ink: #16001c;
     --green: #39ff14;
+    --purple: #6a2c91;
     --font: "OMT Pixel", "Silkscreen", "Press Start 2P", ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 }
 
@@ -201,4 +202,104 @@ button
 {
     display: flex;
     justify-content: space-evenly;
+}
+
+.faders-wrap
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -0.2rem;
+    transform-origin: 50% 100%;
+    background: linear-gradient(var(--light-pink) 0 38%, transparent 38%);
+}
+
+.fader
+{
+    --v: 1;
+    --thumb-h: 1.9rem;
+    position: relative;
+    width: 3.6rem;
+    height: 100%;
+    min-height: 7rem;
+    cursor: grab;
+}
+
+.fader:active
+{
+    cursor: grabbing;
+}
+
+.fader-track
+{
+    position: absolute;
+    left: 50%;
+    width: 0.95rem;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--pink-deep), var(--pink-medium) 45%, var(--pink-deep));
+    border: 0.14rem solid var(--pink-deep);
+    border-radius: 0.55rem;
+}
+
+.fader-thumb
+{
+    position: absolute;
+    left: 50%;
+    bottom: calc(var(--v) * (100% - var(--thumb-h)));
+    width: 3.2rem;
+    height: var(--thumb-h);
+    transform: translateX(-50%);
+    background: linear-gradient(var(--light-pink), var(--medium-pink));
+    border: 0.16rem solid var(--pink-deep);
+    border-radius: 0.4rem;
+    box-shadow: 0 0.12rem 0.3rem lightgray;
+}
+
+/* sample buttons */
+.samples
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+}
+
+.sample-btn
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    min-height: 3.4rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius:0.9rem;
+}
+
+.sample-btn:disabled
+{
+    opacity: 0.45;
+    cursor: default;
+}
+
+.sample-btn:active:not(:disabled)
+{
+    transform: translateY(0.1rem);
+}
+
+.star
+{
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: var(--purple);
+}
+
+.sample-btn[pressed="true]
+{
+    border-color: var(--pink-deep);
+    box-shadow: inset 0 0.2rem 0.5rem lightgray;
+}
+
+.sample-btn[pressed="true"] .star
+{
+    fill: var(--green);
+    filter: drop-shadow(0 0 0.25rem var(--green));
 }
